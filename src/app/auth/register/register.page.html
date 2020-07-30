@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <form #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h6>Wammer turns Sharing Fun Photos and Videos With Your Friends Into a Game</h6>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="firstname" type="text" placeholder="First Name" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="lastname" type="text" placeholder="Last Name" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" [type]="showPassword?'text':'password'" placeholder="Password" ngModel
+                required></ion-input>
+              <ion-icon [name]="passwordIconName" color="primary" slot="end" (click)="changeShowModePassword()">
+              </ion-icon>
+
+            </ion-item>
+
+          </div>
+          <div text-center>
+            <h6>By continuing you agree to the Wammer <a>Terms of Service</a> and <a>Privacy Ploicy</a></h6>
+          </div>
+          <div padding>
+            <ion-row>
+              <ion-col align-self-center size-md="6" size-lg="6" size-xs="6">
+                <ion-button size="large" expand="block" (click)="goBack()">Back</ion-button>
+              </ion-col>
+              <ion-col align-self-center size-md="6" size-lg="6" size-xs="6">
+                <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Next</ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
